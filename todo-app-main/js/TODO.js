@@ -14,7 +14,6 @@ class TODO{
     }
 
     updateTODO(updateTodo){
-        console.log(updateTodo)
         this.todos = this.todos.map( (todo) => {
             if(updateTodo.id === todo.id){
                 return updateTodo
