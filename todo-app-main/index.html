@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./images/site.webmanifest">
+
+  <!-- APP Title -->
+  <title>TODO APP</title>
+</head>
+
+<body>
+
+    <div class="bg-gray-900 w-screen h-screen flex flex-col items-center pt-10 px-10">
+        <h1 class="text-left w-full pb-5 text-gray-200 text-2xl font-bold xl:w-1/3">TODO List</h1>
+      <!-- Input Search -->
+      <div id="header" class="w-full bg-slate-800 h-12 flex flex-col items-center mb-6 border border-purple-500 rounded-lg xl:w-1/3">
+        <form id="form" class="w-full p-2 ">
+          <input id="newtodo" name="todo" autocomplete="off" type="text" placeholder="Create a new Todo" class="w-full outline-none rounded-lg p-1 bg-slate-800 text-gray-400 tracking-wider">
+        </form>
+      </div>
+
+      <!-- List Todos -->
+      <div id="content" class="w-full flex flex-col gap-4 h-2/4 mx-8 bg-slate-800 py-5 px-8 mt-12 rounded-lg xl:w-2/4 overflow-y-scroll w-1/3"></div>
+      
+    </div>
+  
+
+  <script src="./js/App.js" type="module"></script>
+</body>
+</html>
