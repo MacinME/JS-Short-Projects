@@ -46,6 +46,7 @@ function onSubmit(e){
     }
 
     if(!upgrade){
+        console.log(data)
         if(input.value.trim() === ''){
             ui.displayAlert('Empty Field, please fill the input', 'error');
             return;
@@ -65,6 +66,12 @@ function onSubmit(e){
 
         input.classList.remove('text-white');
         upgrade = false;
+        console.log(data)
+        newTodo = {
+            todo: '',
+            status: 'Success'
+        }
+        console.log(data)
     }
     
 
