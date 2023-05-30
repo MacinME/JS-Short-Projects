@@ -1,0 +1,57 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.backgroud-transparent{
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 9;
+}
+
+.mockupsMobile{
+  transform: scale(1.4);
+}
+
+.mockupsDesktop{
+  transform: scale(.9);
+}
+
+.h-default{
+  height: 37rem;
+}
+
+.h-30rem{
+  height: 30.5rem;
+}
+
+.butttonStyle{
+  background: rgb(49,211,92);
+  background: linear-gradient(129deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 49%);
+}
+
+.intro-desktop{
+  transform: scaleY(1.8);
+  position: absolute;
+  right: -250px;
+  width: 65rem;
+  height: 28rem;
+}
+
+.mockusDesktop{
+  transform: scale(1);
+}
+
+.main-container{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.footer-color{
+  background-color: hsl(233, 26%, 24%);
+}
