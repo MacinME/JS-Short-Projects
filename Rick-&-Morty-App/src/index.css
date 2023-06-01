@@ -2,6 +2,9 @@
 :root{
     --primaty-color: #5edb07;
     --second-color: #34a102;
+    --third-color: #080c24;
+    --third-color-transparent: rgba(0,15,38,0.8);
+    --fourth-color: #a462ff;
 }
 
 body{
@@ -13,16 +16,25 @@ body{
 
 /* Styles of general container */
 .container{
-    max-width: 80%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
+}
+
+/* header  styles */
+header{
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
 }
 
 /* Navbar Styles */
 nav{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    height: 5rem;
+    height: 100%;
 }
 
 .navbar-logo{
@@ -35,6 +47,52 @@ nav{
 
 .navbar-logo img{
     width: 12rem;
+}
+
+/* Banner general styles */
+.banner{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../assets/RAM_Mobile.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.banner-main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.layer {
+    background-color: var(--third-color-transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Text Styles */
+.banner-main_input{
+    position: absolute;
+    width: 10rem;
+    height: auto;
+    padding: 1px;
+}
+
+.banner-main_title{
+    color: #fff;
+    letter-spacing: 5px;
+    font-weight: 600;
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 3px;
+}
+
+.banner-main_text{
+    color: #fff;
 }
 
 /* Button Style */
@@ -51,9 +109,155 @@ nav{
     display: none;
 }
 
+.openUpButton{
+    background-color: var(--second-color);
+    border: none;
+    cursor: pointer;
+    width: 6rem;
+    color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.openUpButton:hover{
+    background-color: var(--primaty-color);
+    color: #1d1d1d;
+    font-weight: 600;
+}
+
+.pagination-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.pagination-buttons_click{
+    background-color: #080c24;
+    color: #a2a2a2;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagination-buttons_click:hover{
+    color: #f4f4f4;
+}
+
+/* Input styles */
+.main{
+    width: 100%;
+    /* height: 50rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 100px;
+
+}
+
+form{
+    position: relative;
+}
+
+.form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+}
+
+.search{
+    width: 24rem;
+    padding: 8px 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #f4f4f4;
+    background-color: #2f2f2f;
+    border: var(--second-color) 1px solid;
+}
+
+.search:focus{
+    border: var(--primaty-color) 1px solid;
+}
+
+/* Cards Styles */
+.cards{
+    width: 100%;
+    height: 75vh;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 24rem;
+    grid-template-rows: 12rem 12rem;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.cards-card_container{
+    width: 24rem;
+    height: 12rem;
+    background-color: var(--third-color-transparent);
+    border-radius: 20px;
+}
+
+.cards-card{
+    display: flex;
+    gap: 5px;
+}
+
+.cards-card_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.cards-card_img img{
+    width: 12rem;
+    height: 12rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.cards-card_details{
+    color: #a2a2a2;
+    padding: 0 5px;
+}
+
+.cards-card_title{
+    color: var(--fourth-color);
+}
+
+/* Pagination Styles */
+.pagination{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pagination-counter{
+    color: #f4f4f4;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
 /* Media Queries */
 /* Styles for large screens */
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1501px){
     .navbar-logo{
         justify-content: space-between;
     }
@@ -61,4 +265,44 @@ nav{
     .globalButtonStyle{
         display: block;
     }
+
+    .banner{
+        background-image: url('../assets/RAM_Desktop.jpg');
+    }
+
+    .cards{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 12rem 12rem;
+    }
+
+    .cards-card_container{
+        width: 30rem;
+    }
+
+    .cards-card{
+        flex-direction: row;
+    }
+    
+    .search{
+        width: 28rem;
+    }
+
 }
+
+
+/* Styles for medium screens */
+@media screen and (min-width: 850px) and (max-width: 1500px) {
+    .banner{
+        background-image: url('../assets/RAM_Tablet.jpg');
+    }
+
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search{
+        width: 28rem;
+    }
+}
+
+

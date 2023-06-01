@@ -1,3 +1,4 @@
+import { Banner_RickAndMorty } from './components/Banner_RickAndMorty';
 import { Navbar_RickAndMorty } from './components/Navbar_RickAndMorty';
 
 export const Home_RickAndMorty = () => {
@@ -8,6 +9,11 @@ export const Home_RickAndMorty = () => {
             {/* Navbar Component */}
             <Navbar_RickAndMorty />
         </header>
+        {/* Main Content */}
+        <main>
+          {/* Banner Component */}
+          <Banner_RickAndMorty />
+        </main>
     </section>
   )
 }

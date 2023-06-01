@@ -1,0 +1,51 @@
+// Import assets
+import { useEffect, useState } from "react";
+import { Cards_RickAndMorty } from "./Cards_RickAndMorty"
+import { Pagination_RickAndMorty } from "./Pagination_RickAndMorty"
+import { Search_RickAndMorty } from "./Search_RickAndMorty"
+
+export const Banner_RickAndMorty = () => {
+
+  const [data, setData] = useState(null);
+
+  let url = 'https://rickandmortyapi.com/api/character/';
+
+  const onFetchAPI = async(url) => {
+      const resp = await fetch(url);
+      const data = await resp.json();
+      
+      setData( data );
+  }
+
+  const { results, info } = !!data && data;
+
+  useEffect(() => {
+      onFetchAPI(url);
+  }, [])
+
+  return (
+    <div className="banner">
+        <div className='banner-main'>
+            <div className='layer'></div>
+        </div>
+        <div className="main">
+          {/* Input component */}
+          <Search_RickAndMorty />
+
+          {
+            results 
+              ?
+                <>
+                  {/* Pagination Element */}
+                  <Pagination_RickAndMorty results={ results } info={ info } onFetchAPI={ onFetchAPI } />
+  
+                  {/* Cards component */}
+                  <Cards_RickAndMorty results={ results  } />
+                </>          
+
+              : <h1>Loading...</h1>
+          }
+        </div>
+    </div>
+  )
+}
