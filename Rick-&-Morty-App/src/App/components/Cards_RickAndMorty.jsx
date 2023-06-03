@@ -4,8 +4,13 @@ export const Cards_RickAndMorty = ({ results, setOneCharacter }) => {
   return (
     <div className='cards'>
         {
-            results.map(( character ) => (
-                <Card_RickAndMorty key={ character.id } character={ character } setOneCharacter={ setOneCharacter }/>
+            results.map(( character, index ) => (
+                <Card_RickAndMorty 
+                  key={ character.id } 
+                  character={ character } 
+                  setOneCharacter={ setOneCharacter }
+                  index={ index }  
+                />
             ))
         }
     </div>

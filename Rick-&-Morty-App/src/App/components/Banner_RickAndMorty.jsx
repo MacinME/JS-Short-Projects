@@ -9,9 +9,12 @@ export const Banner_RickAndMorty = () => {
 
   const [data, setData] = useState(null);
   const [oneCharacter, setOneCharacter] = useState({
+    id: null,
     character: null,
     status: false
   });
+
+  const { results, info } = !!data && data;
 
   let url = 'https://rickandmortyapi.com/api/character/';
 
@@ -22,7 +25,29 @@ export const Banner_RickAndMorty = () => {
       setData( data );
   }
 
-  const { results, info } = !!data && data;
+  const onNextCharacter = (id) => {
+    results.filter( (character, index) => {
+      if(index + 1 === id){
+        setOneCharacter( {
+          id,
+          character,
+          status: true
+        })
+      }
+    });
+  }
+
+  const onPrevCharacter = (id) => {
+    results.filter( (character, index) => {
+      if( index + 1 === id){
+        setOneCharacter({
+          id,
+          character,
+          status: true
+        })
+      }
+    });
+  }
 
   useEffect(() => {
       onFetchAPI(url);
@@ -54,7 +79,12 @@ export const Banner_RickAndMorty = () => {
           {/* Render one card */}
           {
             oneCharacter.status && (
-              <CharacterInfo_RickAndMorty { ...oneCharacter } />
+              <CharacterInfo_RickAndMorty 
+                oneCharacter={ oneCharacter } 
+                setOneCharacter={ setOneCharacter } 
+                onNextCharacter={ onNextCharacter }
+                onPrevCharacter={ onPrevCharacter }
+              />
             )
           }
         </div>

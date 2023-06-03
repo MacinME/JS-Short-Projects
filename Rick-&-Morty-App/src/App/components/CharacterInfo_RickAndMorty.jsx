@@ -1,11 +1,25 @@
-export const CharacterInfo_RickAndMorty = ({ character }) => {
-    const { name, status, species, image, location, created, gender } = character;
+export const CharacterInfo_RickAndMorty = ({ 
+    oneCharacter, 
+    setOneCharacter, 
+    onNextCharacter, 
+    onPrevCharacter 
+}) => {
+    
+    const { name, status, species, image, location, created, gender } = oneCharacter.character;
+
+    const closeCharacter = {
+        id: null,
+        ...oneCharacter,
+        status: false
+    }
   return (
     <div className="character-info">
         <div className="container character-info_main">
             <div className="character-info_card">
                 <div className="character-info_closeButton">
-                    <button>
+                    <button 
+                        onClick={ () => setOneCharacter( closeCharacter ) }
+                    >
                         X
                     </button>
                 </div>
@@ -22,12 +36,24 @@ export const CharacterInfo_RickAndMorty = ({ character }) => {
                     </div>
                 </div> 
                 <div className="character-info_buttons">
-                    <button>
-                        Prev
-                    </button>
-                    <button>
-                        Next
-                    </button>
+                    {
+                        oneCharacter.id !== 1 && (
+                            <button
+                                onClick={ () => onPrevCharacter(oneCharacter.id - 1) }
+                            >
+                                Prev
+                            </button>
+                        )
+                    }
+                    {
+                        oneCharacter.id !== 20 && (
+                            <button
+                                onClick={ () => onNextCharacter(oneCharacter.id + 1) }
+                            >
+                                Next
+                            </button>
+                        )
+                    }
                 </div>
             </div>
         </div>
