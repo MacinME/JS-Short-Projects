@@ -68,14 +68,14 @@ export const Banner_RickAndMorty = () => {
             <div className='layer'></div>
         </div>
         <div className="main">
-          {/* Input component */}
-          <Search_RickAndMorty onFetchAPI={ onFetchAPI } />
-
           {
             !data?.error ? (
               results 
               ?
                 <>
+                  {/* Input component */}
+                  <Search_RickAndMorty onFetchAPI={ onFetchAPI } />
+                  
                   {/* Pagination Element */}
                   <Pagination_RickAndMorty results={ results } info={ info } onFetchAPI={ onFetchAPI } />
 

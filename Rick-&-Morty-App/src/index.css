@@ -26,24 +26,25 @@ body{
 header{
     width: 100%;
     height: 5rem;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 99;
 }
 
 /* Navbar Styles */
 nav{
     width: 100%;
-    height: 100%;
+    height: 4rem;
+    background-color: #5edb07;
 }
 
 .navbar-logo{
     height: 100%;
     width: 100%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .navbar-logo img{
@@ -156,15 +157,14 @@ nav{
 /* Input styles */
 .main{
     width: 100%;
-    /* height: 50rem; */
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     gap: 20px;
     position: absolute;
-    top: 90px;
-
+    top: 0;
+    margin-top: 20px;
 }
 
 .main-author{
@@ -175,8 +175,11 @@ nav{
     color: #f4f4f4;
 }
 
-form{
+.form-main{
     position: relative;
+    height: 5rem;
+    width: 100%;
+    background-color: #5edb07;
 }
 
 .form{
@@ -186,10 +189,11 @@ form{
     align-items: center;
     position: fixed;
     left: 0;
+    /* top: 20px; */
 }
 
 .search{
-    width: 18rem;
+    width: 12rem;
     padding: 8px 12px;
     font-size: 14px;
     letter-spacing: 1px;
@@ -313,7 +317,6 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .character-info_card{
@@ -322,15 +325,16 @@ form{
     border: 1px solid var(--primaty-color);
     position: relative;
     width: 16rem;
+    height: 22rem;
 }
 
 .character-info_closeButton{
     position: absolute;
     top: 0;
     right: 0;
-    border-radius: 100%;
+    border-radius: 50px;
     background-color: #ff0810a5;
-    padding: 8px 7px;
+    padding: 5px 4px;
     margin: 5px;
     display: flex;
     justify-content: center;
@@ -344,6 +348,7 @@ form{
     font-size: 16px;
     font-weight: 600;
     background-color: transparent;
+    border-radius: 50px;
 }
 
 .character-info_closeButton:hover{
@@ -412,6 +417,8 @@ form{
     cursor: pointer;
     border-radius: 10px;
     background-color: var(--second-color);
+    color: #1d1d1d;
+    font-weight: 600;
 }
 
 .character-info_buttons > button:hover{
@@ -421,9 +428,9 @@ form{
 /* Media Queries */
 /* Styles for large screens */
 @media screen and (min-width: 1501px){
-    .navbar-logo{
+    /* .navbar-logo{
         justify-content: space-between;
-    }
+    } */
 
     .globalButtonStyle{
         display: block;
@@ -455,7 +462,6 @@ form{
         height: 12rem;
     }
     
-    
     .cards-card_img{
         height: 12rem;
         border-top-left-radius: 20px;
@@ -472,6 +478,7 @@ form{
 
     .character-info_card{
         width: 20rem;
+        height: auto;
     }
     
     .character-info_img img{
@@ -484,8 +491,10 @@ form{
     .character-info_img{
         height: auto;
     }
-    
-    
+
+    .form{
+        top: 30px;
+    }
 
 }
 
@@ -506,6 +515,10 @@ form{
 
     .pagination-counter{
         font-size: 18px;
+    }
+
+    .navbar-logo{
+        display: flex;
     }
 }
 

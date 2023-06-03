@@ -5,10 +5,9 @@ export const Home_RickAndMorty = () => {
   return (
     <section>
       {/* Header */}
-        <header>
-            {/* Navbar Component */}
+        {/* <header>
             <Navbar_RickAndMorty />
-        </header>
+        </header> */}
         {/* Main Content */}
         <main>
           {/* Banner Component */}

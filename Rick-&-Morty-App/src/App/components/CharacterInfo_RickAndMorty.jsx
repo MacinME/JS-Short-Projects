@@ -5,7 +5,7 @@ export const CharacterInfo_RickAndMorty = ({
     onPrevCharacter,
     length
 }) => {
-    const { name, status, species, image, location, created, gender } = oneCharacter.character;
+    const { name, status, species, image, location, gender } = oneCharacter.character;
 
     const closeCharacter = {
         id: null,
@@ -32,7 +32,6 @@ export const CharacterInfo_RickAndMorty = ({
                     <p> { gender }</p>
                     <div className="character-info_moreInfo">
                         <p>Location <span>: { location.name }</span></p>
-                        <p>Created: <span>: { created }</span></p>
                     </div>
                 </div> 
                 <div className="character-info_buttons">
