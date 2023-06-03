@@ -47,7 +47,7 @@ nav{
 }
 
 .navbar-logo img{
-    width: 12rem;
+    width: 10rem;
 }
 
 /* Banner general styles */
@@ -125,6 +125,7 @@ nav{
     border-radius: 20px;
     font-weight: 600;
     margin-top: 10px;
+    color: #1d1d1d;
 }
 
 .openUpButton:hover{
@@ -188,7 +189,7 @@ form{
 }
 
 .search{
-    width: 24rem;
+    width: 18rem;
     padding: 8px 12px;
     font-size: 14px;
     letter-spacing: 1px;
@@ -211,15 +212,15 @@ form{
     display: grid;
     justify-items: center;
     justify-content: center;
-    grid-template-columns: 24rem;
-    grid-template-rows: 12rem 12rem;
+    grid-template-columns: 16rem;
+    grid-template-rows: 10rem 10rem;
     gap: 10px;
     overflow-y: scroll;
 }
 
 .cards-card_container{
-    width: 24rem;
-    height: 12rem;
+    width: 17rem;
+    height: 10rem;
     background-color: var(--third-color-transparent);
     border-radius: 20px;
 }
@@ -233,16 +234,15 @@ form{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 12rem;
+    height: 10rem;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
 .cards-card_img img{
-    width: 12rem;
-    height: 12rem;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50px;
 }
 
 .cards-card_details{
@@ -258,6 +258,7 @@ form{
 
 .cards-card_title{
     color: var(--fourth-color);
+    font-size: 18px;
 }
 
 /* Pagination Styles */
@@ -320,7 +321,7 @@ form{
     border-radius: 10px;
     border: 1px solid var(--primaty-color);
     position: relative;
-    width: 20rem;
+    width: 16rem;
 }
 
 .character-info_closeButton{
@@ -335,6 +336,7 @@ form{
     justify-content: center;
     align-items: center;
 }
+
 .character-info_closeButton button{
     border: none;
     color: #f4f4f4;
@@ -348,10 +350,16 @@ form{
     background-color: #b40006a5;
 }
 
+.character-info_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
 .character-info_img img{
-    width: 20rem;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    width: 8rem;
+    border-radius: 70px;
 }
 
 .character-info_details{
@@ -430,10 +438,6 @@ form{
         grid-template-rows: 12rem 12rem;
     }
 
-    .cards-card_container{
-        width: 30rem;
-    }
-
     .cards-card{
         flex-direction: row;
     }
@@ -445,6 +449,43 @@ form{
     .pagination-counter{
         font-size: 18px;
     }
+    
+    .cards-card_container{
+        width: 24rem;
+        height: 12rem;
+    }
+    
+    
+    .cards-card_img{
+        height: 12rem;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    .cards-card_img img{
+        width: 12rem;
+        height: 12rem;
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .character-info_card{
+        width: 20rem;
+    }
+    
+    .character-info_img img{
+        width: 20rem;
+        border-radius: 0;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    
+    .character-info_img{
+        height: auto;
+    }
+    
+    
 
 }
 
