@@ -1,4 +1,12 @@
-export const Card_RickAndMorty = ({ name, status, image, species, location}) => {
+export const Card_RickAndMorty = ({ character, setOneCharacter }) => {
+
+  const { name, status, image, species, location } = character;
+
+  const oneCharacter = {
+    character,
+    status: true
+  }
+
   return (
     <div className="cards-card_container">
         <div className="cards-card">
@@ -9,7 +17,10 @@ export const Card_RickAndMorty = ({ name, status, image, species, location}) => 
                 <h2 className="cards-card_title">{ name }</h2>
                 <p className="cards-card_status">{ status } - { species }</p>
                 <p className="cards-card_location">{ location.name } </p>
-                <button className="openUpButton"> Open Up</button>
+                <button 
+                  onClick={ () => setOneCharacter( oneCharacter ) }
+                  className="openUpButton"
+                > Open Up</button>
             </div>
         </div>
     </div>

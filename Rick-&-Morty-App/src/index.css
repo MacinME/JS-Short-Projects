@@ -3,8 +3,9 @@
     --primaty-color: #5edb07;
     --second-color: #34a102;
     --third-color: #080c24;
-    --third-color-transparent: rgba(0,15,38,0.8);
+    --third-color-transparent: rgba(0,15,38,0.5);
     --fourth-color: #a462ff;
+    ---sixth-color: rgba(0,0,0,0.7);
 }
 
 body{
@@ -132,7 +133,7 @@ nav{
 }
 
 .pagination-buttons_click{
-    background-color: #080c24;
+    background-color: var(--third-color);
     color: #a2a2a2;
     padding: 5px 14px;
     border: none;
@@ -253,6 +254,110 @@ form{
     color: #f4f4f4;
     font-size: 18px;
     letter-spacing: 2px;
+}
+
+/* One Card Info */
+.character-info{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100px;
+    position: absolute;
+    background-color: var(---sixth-color);
+    z-index: 99;
+}
+
+.character-info_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.character-info_card{
+    background-color:var(--third-color);
+    border-radius: 10px;
+    border: 1px solid var(--primaty-color);
+    position: relative;
+}
+
+.character-info_closeButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color: #ff0810a5;
+    padding: 8px 7px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.character-info_closeButton button{
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.character-info_img img{
+    width: 20rem;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.character-info_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-info_details > h4{
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--fourth-color);
+}
+
+.character-info_details > p {
+    color: #fff;
+    margin: 0;
+}
+
+.character-info_moreInfo{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.character-info_moreInfo > p {
+    margin: 0;
+    line-height: 25px;
+}
+
+.character-info_moreInfo span {
+    color: #8d8d8d;
+}
+
+.character-info_buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.character-info_buttons > button {
+    border: none;
+    width: 6rem;
+    padding: 6px 8px;
+    cursor: pointer;
+    background-color: var(--second-color);
+    border-radius: 10px;
+}
+
+.character-info_buttons > button:hover{
+    background-color: var(--primaty-color);
 }
 
 /* Media Queries */

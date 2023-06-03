@@ -1,12 +1,17 @@
 // Import assets
-import { useEffect, useState } from "react";
-import { Cards_RickAndMorty } from "./Cards_RickAndMorty"
-import { Pagination_RickAndMorty } from "./Pagination_RickAndMorty"
-import { Search_RickAndMorty } from "./Search_RickAndMorty"
+import { useEffect, useState } from 'react';
+import { Cards_RickAndMorty } from './Cards_RickAndMorty';
+import { Pagination_RickAndMorty } from './Pagination_RickAndMorty';
+import { Search_RickAndMorty } from './Search_RickAndMorty';
+import { CharacterInfo_RickAndMorty } from './CharacterInfo_RickAndMorty';
 
 export const Banner_RickAndMorty = () => {
 
   const [data, setData] = useState(null);
+  const [oneCharacter, setOneCharacter] = useState({
+    character: null,
+    status: false
+  });
 
   let url = 'https://rickandmortyapi.com/api/character/';
 
@@ -38,12 +43,19 @@ export const Banner_RickAndMorty = () => {
                 <>
                   {/* Pagination Element */}
                   <Pagination_RickAndMorty results={ results } info={ info } onFetchAPI={ onFetchAPI } />
-  
+
                   {/* Cards component */}
-                  <Cards_RickAndMorty results={ results  } />
-                </>          
+                  <Cards_RickAndMorty results={ results  } setOneCharacter={ setOneCharacter } />
+                </>    
 
               : <h1>Loading...</h1>
+          }
+
+          {/* Render one card */}
+          {
+            oneCharacter.status && (
+              <CharacterInfo_RickAndMorty { ...oneCharacter } />
+            )
           }
         </div>
     </div>
