@@ -2,9 +2,9 @@ export const CharacterInfo_RickAndMorty = ({
     oneCharacter, 
     setOneCharacter, 
     onNextCharacter, 
-    onPrevCharacter 
+    onPrevCharacter,
+    length
 }) => {
-    
     const { name, status, species, image, location, created, gender } = oneCharacter.character;
 
     const closeCharacter = {
@@ -46,7 +46,7 @@ export const CharacterInfo_RickAndMorty = ({
                         )
                     }
                     {
-                        oneCharacter.id !== 20 && (
+                        oneCharacter.id !== length && (
                             <button
                                 onClick={ () => onNextCharacter(oneCharacter.id + 1) }
                             >

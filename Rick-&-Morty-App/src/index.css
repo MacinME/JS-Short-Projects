@@ -3,7 +3,7 @@
     --primaty-color: #5edb07;
     --second-color: #34a102;
     --third-color: #080c24;
-    --third-color-transparent: rgba(0,15,38,0.5);
+    --third-color-transparent: rgba(0,15,38,0.8);
     --fourth-color: #a462ff;
     ---sixth-color: rgba(0,0,0,0.7);
 }
@@ -95,6 +95,12 @@ nav{
 .banner-main_text{
     color: #fff;
 }
+.banner-error{
+    color: #fff;
+    margin-top: 50px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
 
 /* Button Style */
 .globalButtonStyle{
@@ -115,7 +121,6 @@ nav{
     border: none;
     cursor: pointer;
     width: 6rem;
-    color: #f4f4f4;
     padding: 5px 10px;
     border-radius: 20px;
     font-weight: 600;
@@ -157,8 +162,16 @@ nav{
     align-items: center;
     gap: 20px;
     position: absolute;
-    top: 100px;
+    top: 90px;
 
+}
+
+.main-author{
+    color: #949494;
+}
+
+.main-author > a{
+    color: #f4f4f4;
 }
 
 form{
@@ -259,9 +272,31 @@ form{
 
 .pagination-counter{
     color: #f4f4f4;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 2px;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    color: #efbb00;
 }
+
+.pagination-counter > p > span{
+    width: auto;
+    padding: 4px;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 2px;
+    color: #fff;
+}
+
+.pagination-counter > p > span:hover{
+    background-color: #a462ff;
+    cursor: pointer;
+}
+
 
 /* One Card Info */
 .character-info{
@@ -407,6 +442,10 @@ form{
         width: 28rem;
     }
 
+    .pagination-counter{
+        font-size: 18px;
+    }
+
 }
 
 
@@ -422,6 +461,10 @@ form{
 
     .search{
         width: 28rem;
+    }
+
+    .pagination-counter{
+        font-size: 18px;
     }
 }
 

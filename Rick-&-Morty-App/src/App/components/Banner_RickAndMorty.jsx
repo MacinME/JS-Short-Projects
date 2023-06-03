@@ -19,10 +19,19 @@ export const Banner_RickAndMorty = () => {
   let url = 'https://rickandmortyapi.com/api/character/';
 
   const onFetchAPI = async(url) => {
-      const resp = await fetch(url);
-      const data = await resp.json();
-      
-      setData( data );
+
+      try { 
+
+        const resp = await fetch(url);
+        if(!resp.ok) throw new Error('Error: There is nothing, try again')
+        const data = await resp.json();
+        setData( data );
+        
+      } catch (e) {
+        setData({
+          error: 'There is nothing. Try again!'
+        })
+      }
   }
 
   const onNextCharacter = (id) => {
@@ -60,10 +69,11 @@ export const Banner_RickAndMorty = () => {
         </div>
         <div className="main">
           {/* Input component */}
-          <Search_RickAndMorty />
+          <Search_RickAndMorty onFetchAPI={ onFetchAPI } />
 
           {
-            results 
+            !data?.error ? (
+              results 
               ?
                 <>
                   {/* Pagination Element */}
@@ -74,6 +84,10 @@ export const Banner_RickAndMorty = () => {
                 </>    
 
               : <h1>Loading...</h1>
+            ) :
+            (
+              <h1 className='banner-error'>{ data.error }</h1>
+            )
           }
 
           {/* Render one card */}
@@ -84,9 +98,11 @@ export const Banner_RickAndMorty = () => {
                 setOneCharacter={ setOneCharacter } 
                 onNextCharacter={ onNextCharacter }
                 onPrevCharacter={ onPrevCharacter }
+                length={ results.length }
               />
             )
           }
+            <span className='main-author'> Author of API: <a href="https://github.com/afuh" target='_blank'>afuh </a></span>
         </div>
     </div>
   )

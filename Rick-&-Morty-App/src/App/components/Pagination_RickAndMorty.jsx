@@ -1,4 +1,5 @@
 export const Pagination_RickAndMorty = ({ results, info, onFetchAPI }) => {
+    const { count, pages } = info;
   return (
     <div className="container">
         <div className="pagination">
@@ -19,7 +20,9 @@ export const Pagination_RickAndMorty = ({ results, info, onFetchAPI }) => {
                 </button>
             </div>
             <div className="pagination-counter">
-                <p>Displayed: { results.length }  </p>
+                <p>Results: <span>{ count }</span> </p>
+                <p>Displayed: <span>{ results.length }</span>  </p>
+                <p>Pages: <span>{ pages }</span> </p>
             </div>
         </div>
     </div>
